@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #212121;
+}
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    background: #191919;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:-50%;
+    background-color: #ffce00;
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    top: -70%;
+    transform: skewY(400deg);
+}
+.imgBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+    width: 100%;
+}
+.cushion-img {
+    max-width: 100%;
+    transition: 0.5s;
+    width: auto;
+    height: 270px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.contentBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 2;
+    color: #ffce00;
+    letter-spacing: 1px;
+}
+.price {
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px 0;
+}
+
+.buy {
+    opacity: 0;
+    background-color: #ffce00;
+    padding: 12px 15px;
+    border-radius: 20px;
+    border: 0;
+    font-weight: bold;
+    font-size: 15px;
+    font-style: italic;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card:hover .buy {
+    opacity: 1;
+    top: 0;
+}
